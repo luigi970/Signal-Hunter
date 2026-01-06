@@ -1,0 +1,8 @@
+{
+  "name": "The Signal Hunter",
+  "description": "An automated market research tool that transforms a niche into validated business opportunities by hunting for pain points across the web and Reddit using AI.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
