@@ -2,7 +2,7 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { Category, Problem } from "../types";
 
-const API_KEY = process.env.API_KEY || "";
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || "";
 
 export class SignalHunterService {
   private ai: GoogleGenAI;
@@ -41,7 +41,7 @@ export class SignalHunterService {
    */
   async huntAndSynthesize(queries: string[]): Promise<{ problems: Problem[], sources: any[] }> {
     const combinedQueries = queries.join(", ");
-    
+
     // We use Google Search grounding to perform the "Extraction" phase
     const response = await this.ai.models.generateContent({
       model: "gemini-3-flash-preview",
